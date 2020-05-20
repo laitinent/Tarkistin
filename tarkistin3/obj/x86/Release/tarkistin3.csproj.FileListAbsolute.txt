@@ -1,0 +1,15 @@
+C:\Users\tlaitinen\Documents\GitHub\Tarkistin\tarkistin3\bin\Release\tarkistin3.exe.config
+C:\Users\tlaitinen\Documents\GitHub\Tarkistin\tarkistin3\bin\Release\tarkistin3.exe
+C:\Users\tlaitinen\Documents\GitHub\Tarkistin\tarkistin3\bin\Release\tarkistin3.pdb
+C:\Users\tlaitinen\Documents\GitHub\Tarkistin\tarkistin3\obj\x86\Release\tarkistin3.csprojAssemblyReference.cache
+C:\Users\tlaitinen\Documents\GitHub\Tarkistin\tarkistin3\obj\x86\Release\MainWindow.g.cs
+C:\Users\tlaitinen\Documents\GitHub\Tarkistin\tarkistin3\obj\x86\Release\App.g.cs
+C:\Users\tlaitinen\Documents\GitHub\Tarkistin\tarkistin3\obj\x86\Release\tarkistin3_MarkupCompile.cache
+C:\Users\tlaitinen\Documents\GitHub\Tarkistin\tarkistin3\obj\x86\Release\tarkistin3_MarkupCompile.lref
+C:\Users\tlaitinen\Documents\GitHub\Tarkistin\tarkistin3\obj\x86\Release\MainWindow.baml
+C:\Users\tlaitinen\Documents\GitHub\Tarkistin\tarkistin3\obj\x86\Release\tarkistin3.g.resources
+C:\Users\tlaitinen\Documents\GitHub\Tarkistin\tarkistin3\obj\x86\Release\tarkistin3.Properties.Resources.resources
+C:\Users\tlaitinen\Documents\GitHub\Tarkistin\tarkistin3\obj\x86\Release\tarkistin3.csproj.GenerateResource.cache
+C:\Users\tlaitinen\Documents\GitHub\Tarkistin\tarkistin3\obj\x86\Release\tarkistin3.csproj.CoreCompileInputs.cache
+C:\Users\tlaitinen\Documents\GitHub\Tarkistin\tarkistin3\obj\x86\Release\tarkistin3.exe
+C:\Users\tlaitinen\Documents\GitHub\Tarkistin\tarkistin3\obj\x86\Release\tarkistin3.pdb

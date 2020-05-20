@@ -1,9 +1,11 @@
 ﻿<Window x:Class="tarkistin3.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525" xmlns:my="clr-namespace:tarkistin3" Loaded="Window_Loaded" Closing="Window_Closing">
+        Title="Inspektori" Height="350" Width="525" xmlns:my="clr-namespace:tarkistin3" Loaded="Window_Loaded" Closing="Window_Closing">
     <Window.Resources>
         
     </Window.Resources>
-    <Grid ></Grid>
+    <Grid >
+        <Label x:Name="label" Content="Valvontaohjelma kokeeseen. Älä sulje, pienentää voit." HorizontalAlignment="Left" Margin="110,79,0,0" VerticalAlignment="Top"/>
+    </Grid>
 </Window>

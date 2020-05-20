@@ -27,6 +27,8 @@ namespace tarkistin3
         WebClient client = new WebClient();
         WebClient client2 = new WebClient();
         String DBServerURL;
+        List<string> browsers = new List<string> { "msedge", "firefox", "chrome", "iexplore" };
+
         List<string> allowed = new List<string>();
 
         public MainWindow()
@@ -61,7 +63,11 @@ namespace tarkistin3
                 {
                     if (p.MainWindowTitle.Length > 0 && p.Id != myId && !allowed.Contains(p.ProcessName))
                     {
-                        allPrograms += p.ProcessName + " ";
+                        if (!browsers.Contains(p.ProcessName))
+                        {
+                            allPrograms += p.ProcessName + " ";
+                        }
+
                         if (p.MainWindowTitle.Length > 20)
                             allDescriptions += (p.MainWindowTitle.Substring(0, 20) + ";");
                         else
@@ -74,8 +80,8 @@ namespace tarkistin3
 
                 if (allPrograms.Length + allDescriptions.Length > 200)
                 {
-                    allDescriptions = allDescriptions.Substring(0, 100);
-                    allPrograms = allPrograms.Substring(0, 100);
+                    allDescriptions = allDescriptions.Substring(0, Math.Min(allDescriptions.Length, 200 - Math.Min(allPrograms.Length, 100)));
+                    allPrograms = allPrograms.Substring(0, Math.Min(allPrograms.Length,100));
                 }
                 client.QueryString.Clear();
                 client.QueryString.Add("user", u + "_" + m);
@@ -106,13 +112,23 @@ namespace tarkistin3
             Stream data = client2.OpenRead("http://staff.hamk.fi/~tlaitinen/new/osoite.txt");
             StreamReader reader = new StreamReader(data);
             DBServerURL = reader.ReadLine();
+            int versio = 0;
+            int.TryParse(reader.ReadLine(), out versio);
+            if (versio < 1)
+            {
+                MessageBox.Show("Päivitä uudempi versio ohjelmasta.","Vanha versio",MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                Close();
+            }
             String s = "";
             do
             {
                 s = reader.ReadLine();
                 if (s != null) allowed.Add(s);
             } while (s != null);
+#if DEBUG
+
             MessageBox.Show(DBServerURL + ":" + allowed[0]);
+#endif
             data.Close();
             reader.Close();
             timer.Start();
@@ -120,7 +136,11 @@ namespace tarkistin3
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            timer.Stop();
+            if (MessageBox.Show("Haluatko poistua ohjelmasta?", "Confirmation", MessageBoxButton.YesNo,MessageBoxImage.Question) == MessageBoxResult.No)
+            {
+                e.Cancel = true;
+                timer.Stop();
+            }
         }
     }
 }
